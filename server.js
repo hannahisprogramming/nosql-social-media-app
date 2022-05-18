@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 app.use(require('./routes/api'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pizza-hunt', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/nosql-social-media-app', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
