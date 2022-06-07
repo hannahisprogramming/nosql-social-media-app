@@ -13,13 +13,14 @@ const thoughtController = {
   },
 
   getThoughtById({params}, res) {
-    Thought.findOne({_id: params.thoughtId})
+    Thought.findOne({_id: params.id})
     .select('-__v')
     .then(dbThoughtData => {
       if(!dbThoughtData){
         res.status(404).json({message: 'No Thought found with this id!'});
         return;
       }
+      res.json(dbThoughtData);
     })
     .catch(err => {
       console.log(err);
